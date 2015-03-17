@@ -1,0 +1,15 @@
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\AutoMapper.Net4.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\DLL.dll.config
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\DLL.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\DLL.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\AutoMapper.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\EntityFramework.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\DTO.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\AutoMapper.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\AutoMapper.xml
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\AutoMapper.Net4.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\bin\Debug\EntityFramework.xml
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\obj\Debug\DLL.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DLL\obj\Debug\DLL.pdb

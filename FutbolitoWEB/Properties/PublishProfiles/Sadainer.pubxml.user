@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB_Pub</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>03/11/2015 16:50:18</publishTime>
+    </File>
+    <File Include="bin/BLL.dll">
+      <publishTime>03/11/2015 18:36:18</publishTime>
+    </File>
+    <File Include="bin/DLL.dll">
+      <publishTime>03/11/2015 18:36:18</publishTime>
+    </File>
+    <File Include="bin/DTO.dll">
+      <publishTime>03/11/2015 18:36:17</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/09/2015 09:28:49</publishTime>
+    </File>
+    <File Include="bin/FutbolitoWEB.dll">
+      <publishTime>03/12/2015 10:11:16</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>03/11/2015 10:55:19</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Formularios/Login.aspx">
+      <publishTime>03/11/2015 18:37:45</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.3.js">
+      <publishTime>03/11/2015 09:55:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.3.min.js">
+      <publishTime>03/11/2015 09:55:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.3.min.map">
+      <publishTime>03/11/2015 09:55:56</publishTime>
+    </File>
+    <File Include="Scripts/LibScripts/jquery_ext.js">
+      <publishTime>03/11/2015 18:35:08</publishTime>
+    </File>
+    <File Include="Scripts/npm.js">
+      <publishTime>03/11/2015 09:56:55</publishTime>
+    </File>
+    <File Include="Scripts/Principal.js">
+      <publishTime>03/12/2015 10:24:16</publishTime>
+    </File>
+    <File Include="Scripts/validator.js">
+      <publishTime>03/11/2015 16:13:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/12/2015 10:11:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

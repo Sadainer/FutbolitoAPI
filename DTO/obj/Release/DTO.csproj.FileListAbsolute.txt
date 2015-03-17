@@ -1,0 +1,5 @@
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\bin\Release\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\bin\Release\DTO.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\obj\Release\DTO.csprojResolveAssemblyReference.cache
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\obj\Release\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\obj\Release\DTO.pdb

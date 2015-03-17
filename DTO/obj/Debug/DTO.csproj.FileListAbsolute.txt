@@ -1,0 +1,4 @@
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\bin\Debug\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\bin\Debug\DTO.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\obj\Debug\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\DTO\obj\Debug\DTO.pdb

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tucanchaappModelStoreContainer" CdmEntityContainer="tucanchaappEntities">
+    <EntitySetMapping Name="canchas">
+      <EntityTypeMapping TypeName="tucanchaappModel.canchas">
+        <MappingFragment StoreEntitySet="canchas">
+          <ScalarProperty Name="IdCancha" ColumnName="IdCancha" />
+          <ScalarProperty Name="Establecimientos_IdEstablecimiento" ColumnName="Establecimientos_IdEstablecimiento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+          <ScalarProperty Name="Techo" ColumnName="Techo" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ciudades">
+      <EntityTypeMapping TypeName="tucanchaappModel.ciudades">
+        <MappingFragment StoreEntitySet="ciudades">
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Departamento_idDepartamento" ColumnName="Departamento_idDepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="tucanchaappModel.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamentos">
+      <EntityTypeMapping TypeName="tucanchaappModel.departamentos">
+        <MappingFragment StoreEntitySet="departamentos">
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="establecimientos">
+      <EntityTypeMapping TypeName="tucanchaappModel.establecimientos">
+        <MappingFragment StoreEntitySet="establecimientos">
+          <ScalarProperty Name="IdEstablecimiento" ColumnName="IdEstablecimiento" />
+          <ScalarProperty Name="Ciudades_IdCiudad" ColumnName="Ciudades_IdCiudad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fotoestablecimientos">
+      <EntityTypeMapping TypeName="tucanchaappModel.fotoestablecimientos">
+        <MappingFragment StoreEntitySet="fotoestablecimientos">
+          <ScalarProperty Name="IdFotoEstablecimiento" ColumnName="IdFotoEstablecimiento" />
+          <ScalarProperty Name="Establecimientos_IdEstablecimiento" ColumnName="Establecimientos_IdEstablecimiento" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservas">
+      <EntityTypeMapping TypeName="tucanchaappModel.reservas">
+        <MappingFragment StoreEntitySet="reservas">
+          <ScalarProperty Name="idReserva" ColumnName="idReserva" />
+          <ScalarProperty Name="Canchas_IdCancha" ColumnName="Canchas_IdCancha" />
+          <ScalarProperty Name="Clientes_IdCliente" ColumnName="Clientes_IdCliente" />
+          <ScalarProperty Name="Usuarios_idUsuario" ColumnName="Usuarios_idUsuario" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="HoraReservada" ColumnName="HoraReservada" />
+          <ScalarProperty Name="TipoReserva" ColumnName="TipoReserva" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarifaprecios">
+      <EntityTypeMapping TypeName="tucanchaappModel.tarifaprecios">
+        <MappingFragment StoreEntitySet="tarifaprecios">
+          <ScalarProperty Name="IdTarifaPrecio" ColumnName="IdTarifaPrecio" />
+          <ScalarProperty Name="Tarifas_idTarifa" ColumnName="Tarifas_idTarifa" />
+          <ScalarProperty Name="DiaSemanaInicio" ColumnName="DiaSemanaInicio" />
+          <ScalarProperty Name="DiaSemanaFinal" ColumnName="DiaSemanaFinal" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarifas">
+      <EntityTypeMapping TypeName="tucanchaappModel.tarifas">
+        <MappingFragment StoreEntitySet="tarifas">
+          <ScalarProperty Name="idTarifa" ColumnName="idTarifa" />
+          <ScalarProperty Name="Canchas_IdCancha" ColumnName="Canchas_IdCancha" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="ValorDefault" ColumnName="ValorDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="tucanchaappModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="listadociudades">
+      <EntityTypeMapping TypeName="tucanchaappModel.listadociudades">
+        <MappingFragment StoreEntitySet="listadociudades">
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tucanchaappModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="tucanchaappModelStoreContainer">
+          <EntitySet Name="canchas" EntityType="tucanchaappModel.Store.canchas" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="ciudades" EntityType="tucanchaappModel.Store.ciudades" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="clientes" EntityType="tucanchaappModel.Store.clientes" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="departamentos" EntityType="tucanchaappModel.Store.departamentos" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="establecimientos" EntityType="tucanchaappModel.Store.establecimientos" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="fotoestablecimientos" EntityType="tucanchaappModel.Store.fotoestablecimientos" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="reservas" EntityType="tucanchaappModel.Store.reservas" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="tarifaprecios" EntityType="tucanchaappModel.Store.tarifaprecios" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="tarifas" EntityType="tucanchaappModel.Store.tarifas" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="usuarios" EntityType="tucanchaappModel.Store.usuarios" store:Type="Tables" Schema="tucanchaapp" />
+          <EntitySet Name="listadociudades" EntityType="tucanchaappModel.Store.listadociudades" store:Type="Views" store:Schema="tucanchaapp" store:Name="listadociudades">
+            <DefiningQuery>SELECT
+      `listadociudades`.`IdCiudad`, 
+      `listadociudades`.`Ciudad`
+      FROM `listadociudades` AS `listadociudades`</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_Canchas_Establecimientos1" Association="tucanchaappModel.Store.fk_Canchas_Establecimientos1">
+            <End Role="establecimientos" EntitySet="establecimientos" />
+            <End Role="canchas" EntitySet="canchas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Ciudades_Dptos1" Association="tucanchaappModel.Store.fk_Ciudades_Dptos1">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="ciudades" EntitySet="ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Establecimientos_Ciudades" Association="tucanchaappModel.Store.fk_Establecimientos_Ciudades">
+            <End Role="ciudades" EntitySet="ciudades" />
+            <End Role="establecimientos" EntitySet="establecimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FotoEstablecimientos_Establecimientos1" Association="tucanchaappModel.Store.fk_FotoEstablecimientos_Establecimientos1">
+            <End Role="establecimientos" EntitySet="establecimientos" />
+            <End Role="fotoestablecimientos" EntitySet="fotoestablecimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Canchas1" Association="tucanchaappModel.Store.fk_Reservas_Canchas1">
+            <End Role="canchas" EntitySet="canchas" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Clientes1" Association="tucanchaappModel.Store.fk_Reservas_Clientes1">
+            <End Role="clientes" EntitySet="clientes" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Usuarios1" Association="tucanchaappModel.Store.fk_Reservas_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TarifaPrecios_Tarifas1" Association="tucanchaappModel.Store.fk_TarifaPrecios_Tarifas1">
+            <End Role="tarifas" EntitySet="tarifas" />
+            <End Role="tarifaprecios" EntitySet="tarifaprecios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tarifas_Canchas1" Association="tucanchaappModel.Store.fk_Tarifas_Canchas1">
+            <End Role="canchas" EntitySet="canchas" />
+            <End Role="tarifas" EntitySet="tarifas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="canchas">
+          <Key>
+            <PropertyRef Name="IdCancha" />
+          </Key>
+          <Property Name="IdCancha" Type="int" Nullable="false" />
+          <Property Name="Establecimientos_IdEstablecimiento" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" />
+          <Property Name="Capacidad" Type="smallint" />
+          <Property Name="Techo" Type="bool" />
+          <Property Name="Calificacion" Type="smallint" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ciudades">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="45" />
+          <Property Name="Departamento_idDepartamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" />
+          <Property Name="Celular" Type="varchar" MaxLength="10" />
+          <Property Name="Correo" Type="varchar" MaxLength="45" />
+          <Property Name="Calificacion" Type="smallint" />
+          <Property Name="Foto" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="departamentos">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+          <Property Name="Departamento" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="establecimientos">
+          <Key>
+            <PropertyRef Name="IdEstablecimiento" />
+          </Key>
+          <Property Name="IdEstablecimiento" Type="int" Nullable="false" />
+          <Property Name="Ciudades_IdCiudad" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" />
+          <Property Name="Direccion" Type="varchar" MaxLength="45" />
+          <Property Name="Telefono" Type="varchar" MaxLength="12" />
+          <Property Name="Celular" Type="varchar" MaxLength="10" />
+          <Property Name="Correo" Type="varchar" MaxLength="45" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="fotoestablecimientos">
+          <Key>
+            <PropertyRef Name="IdFotoEstablecimiento" />
+          </Key>
+          <Property Name="IdFotoEstablecimiento" Type="int" Nullable="false" />
+          <Property Name="Establecimientos_IdEstablecimiento" Type="int" Nullable="false" />
+          <Property Name="Foto" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="reservas">
+          <Key>
+            <PropertyRef Name="idReserva" />
+          </Key>
+          <Property Name="idReserva" Type="int" Nullable="false" />
+          <Property Name="Canchas_IdCancha" Type="int" Nullable="false" />
+          <Property Name="Clientes_IdCliente" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Usuarios_idUsuario" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="HoraReservada" Type="datetime" />
+          <Property Name="TipoReserva" Type="varchar" MaxLength="45" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
+          <Property Name="Valor" Type="varchar" MaxLength="6" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tarifaprecios">
+          <Key>
+            <PropertyRef Name="IdTarifaPrecio" />
+          </Key>
+          <Property Name="IdTarifaPrecio" Type="int" Nullable="false" />
+          <Property Name="Tarifas_idTarifa" Type="int" Nullable="false" />
+          <Property Name="DiaSemanaInicio" Type="smallint" />
+          <Property Name="DiaSemanaFinal" Type="smallint" />
+          <Property Name="HoraInicio" Type="smallint" />
+          <Property Name="HoraFinal" Type="smallint" />
+          <Property Name="Valor" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="tarifas">
+          <Key>
+            <PropertyRef Name="idTarifa" />
+          </Key>
+          <Property Name="idTarifa" Type="int" Nullable="false" />
+          <Property Name="Canchas_IdCancha" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" />
+          <Property Name="FechaFinal" Type="date" />
+          <Property Name="ValorDefault" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="20" />
+          <Property Name="TipoUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="Correo" Type="varchar" MaxLength="45" />
+          <Property Name="Celular" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'def.tucanchaapp.listadociudades' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="listadociudades">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="fk_Canchas_Establecimientos1">
+          <End Role="establecimientos" Type="tucanchaappModel.Store.establecimientos" Multiplicity="1" />
+          <End Role="canchas" Type="tucanchaappModel.Store.canchas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="establecimientos">
+              <PropertyRef Name="IdEstablecimiento" />
+            </Principal>
+            <Dependent Role="canchas">
+              <PropertyRef Name="Establecimientos_IdEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Ciudades_Dptos1">
+          <End Role="departamentos" Type="tucanchaappModel.Store.departamentos" Multiplicity="1" />
+          <End Role="ciudades" Type="tucanchaappModel.Store.ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="ciudades">
+              <PropertyRef Name="Departamento_idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Establecimientos_Ciudades">
+          <End Role="ciudades" Type="tucanchaappModel.Store.ciudades" Multiplicity="1" />
+          <End Role="establecimientos" Type="tucanchaappModel.Store.establecimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ciudades">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="establecimientos">
+              <PropertyRef Name="Ciudades_IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FotoEstablecimientos_Establecimientos1">
+          <End Role="establecimientos" Type="tucanchaappModel.Store.establecimientos" Multiplicity="1" />
+          <End Role="fotoestablecimientos" Type="tucanchaappModel.Store.fotoestablecimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="establecimientos">
+              <PropertyRef Name="IdEstablecimiento" />
+            </Principal>
+            <Dependent Role="fotoestablecimientos">
+              <PropertyRef Name="Establecimientos_IdEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Canchas1">
+          <End Role="canchas" Type="tucanchaappModel.Store.canchas" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.Store.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canchas">
+              <PropertyRef Name="IdCancha" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Canchas_IdCancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Clientes1">
+          <End Role="clientes" Type="tucanchaappModel.Store.clientes" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.Store.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clientes">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Clientes_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Usuarios1">
+          <End Role="usuarios" Type="tucanchaappModel.Store.usuarios" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.Store.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Usuarios_idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TarifaPrecios_Tarifas1">
+          <End Role="tarifas" Type="tucanchaappModel.Store.tarifas" Multiplicity="1" />
+          <End Role="tarifaprecios" Type="tucanchaappModel.Store.tarifaprecios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifas">
+              <PropertyRef Name="idTarifa" />
+            </Principal>
+            <Dependent Role="tarifaprecios">
+              <PropertyRef Name="Tarifas_idTarifa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tarifas_Canchas1">
+          <End Role="canchas" Type="tucanchaappModel.Store.canchas" Multiplicity="1" />
+          <End Role="tarifas" Type="tucanchaappModel.Store.tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canchas">
+              <PropertyRef Name="IdCancha" />
+            </Principal>
+            <Dependent Role="tarifas">
+              <PropertyRef Name="Canchas_IdCancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tucanchaappModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="tucanchaappEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="canchas" EntityType="tucanchaappModel.canchas" />
+          <EntitySet Name="ciudades" EntityType="tucanchaappModel.ciudades" />
+          <EntitySet Name="clientes" EntityType="tucanchaappModel.clientes" />
+          <EntitySet Name="departamentos" EntityType="tucanchaappModel.departamentos" />
+          <EntitySet Name="establecimientos" EntityType="tucanchaappModel.establecimientos" />
+          <EntitySet Name="fotoestablecimientos" EntityType="tucanchaappModel.fotoestablecimientos" />
+          <EntitySet Name="reservas" EntityType="tucanchaappModel.reservas" />
+          <EntitySet Name="tarifaprecios" EntityType="tucanchaappModel.tarifaprecios" />
+          <EntitySet Name="tarifas" EntityType="tucanchaappModel.tarifas" />
+          <EntitySet Name="usuarios" EntityType="tucanchaappModel.usuarios" />
+          <EntitySet Name="listadociudades" EntityType="tucanchaappModel.listadociudades" />
+          <AssociationSet Name="fk_Canchas_Establecimientos1" Association="tucanchaappModel.fk_Canchas_Establecimientos1">
+            <End Role="establecimientos" EntitySet="establecimientos" />
+            <End Role="canchas" EntitySet="canchas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Canchas1" Association="tucanchaappModel.fk_Reservas_Canchas1">
+            <End Role="canchas" EntitySet="canchas" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tarifas_Canchas1" Association="tucanchaappModel.fk_Tarifas_Canchas1">
+            <End Role="canchas" EntitySet="canchas" />
+            <End Role="tarifas" EntitySet="tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Ciudades_Dptos1" Association="tucanchaappModel.fk_Ciudades_Dptos1">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="ciudades" EntitySet="ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Establecimientos_Ciudades" Association="tucanchaappModel.fk_Establecimientos_Ciudades">
+            <End Role="ciudades" EntitySet="ciudades" />
+            <End Role="establecimientos" EntitySet="establecimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Clientes1" Association="tucanchaappModel.fk_Reservas_Clientes1">
+            <End Role="clientes" EntitySet="clientes" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FotoEstablecimientos_Establecimientos1" Association="tucanchaappModel.fk_FotoEstablecimientos_Establecimientos1">
+            <End Role="establecimientos" EntitySet="establecimientos" />
+            <End Role="fotoestablecimientos" EntitySet="fotoestablecimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Reservas_Usuarios1" Association="tucanchaappModel.fk_Reservas_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="reservas" EntitySet="reservas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TarifaPrecios_Tarifas1" Association="tucanchaappModel.fk_TarifaPrecios_Tarifas1">
+            <End Role="tarifas" EntitySet="tarifas" />
+            <End Role="tarifaprecios" EntitySet="tarifaprecios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="canchas">
+          <Key>
+            <PropertyRef Name="IdCancha" />
+          </Key>
+          <Property Name="IdCancha" Type="Int32" Nullable="false" />
+          <Property Name="Establecimientos_IdEstablecimiento" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Capacidad" Type="Int16" />
+          <Property Name="Techo" Type="Boolean" />
+          <Property Name="Calificacion" Type="Int16" />
+          <Property Name="Estado" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="establecimientos" Relationship="tucanchaappModel.fk_Canchas_Establecimientos1" FromRole="canchas" ToRole="establecimientos" />
+          <NavigationProperty Name="reservas" Relationship="tucanchaappModel.fk_Reservas_Canchas1" FromRole="canchas" ToRole="reservas" />
+          <NavigationProperty Name="tarifas" Relationship="tucanchaappModel.fk_Tarifas_Canchas1" FromRole="canchas" ToRole="tarifas" />
+        </EntityType>
+        <EntityType Name="ciudades">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Departamento_idDepartamento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="departamentos" Relationship="tucanchaappModel.fk_Ciudades_Dptos1" FromRole="ciudades" ToRole="departamentos" />
+          <NavigationProperty Name="establecimientos" Relationship="tucanchaappModel.fk_Establecimientos_Ciudades" FromRole="ciudades" ToRole="establecimientos" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Correo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Calificacion" Type="Int16" />
+          <Property Name="Foto" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="reservas" Relationship="tucanchaappModel.fk_Reservas_Clientes1" FromRole="clientes" ToRole="reservas" />
+        </EntityType>
+        <EntityType Name="departamentos">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ciudades" Relationship="tucanchaappModel.fk_Ciudades_Dptos1" FromRole="departamentos" ToRole="ciudades" />
+        </EntityType>
+        <EntityType Name="establecimientos">
+          <Key>
+            <PropertyRef Name="IdEstablecimiento" />
+          </Key>
+          <Property Name="IdEstablecimiento" Type="Int32" Nullable="false" />
+          <Property Name="Ciudades_IdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Correo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="canchas" Relationship="tucanchaappModel.fk_Canchas_Establecimientos1" FromRole="establecimientos" ToRole="canchas" />
+          <NavigationProperty Name="ciudades" Relationship="tucanchaappModel.fk_Establecimientos_Ciudades" FromRole="establecimientos" ToRole="ciudades" />
+          <NavigationProperty Name="fotoestablecimientos" Relationship="tucanchaappModel.fk_FotoEstablecimientos_Establecimientos1" FromRole="establecimientos" ToRole="fotoestablecimientos" />
+        </EntityType>
+        <EntityType Name="fotoestablecimientos">
+          <Key>
+            <PropertyRef Name="IdFotoEstablecimiento" />
+          </Key>
+          <Property Name="IdFotoEstablecimiento" Type="Int32" Nullable="false" />
+          <Property Name="Establecimientos_IdEstablecimiento" Type="Int32" Nullable="false" />
+          <Property Name="Foto" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="establecimientos" Relationship="tucanchaappModel.fk_FotoEstablecimientos_Establecimientos1" FromRole="fotoestablecimientos" ToRole="establecimientos" />
+        </EntityType>
+        <EntityType Name="reservas">
+          <Key>
+            <PropertyRef Name="idReserva" />
+          </Key>
+          <Property Name="idReserva" Type="Int32" Nullable="false" />
+          <Property Name="Canchas_IdCancha" Type="Int32" Nullable="false" />
+          <Property Name="Clientes_IdCliente" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="Usuarios_idUsuario" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" />
+          <Property Name="HoraReservada" Type="DateTime" />
+          <Property Name="TipoReserva" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Valor" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="canchas" Relationship="tucanchaappModel.fk_Reservas_Canchas1" FromRole="reservas" ToRole="canchas" />
+          <NavigationProperty Name="clientes" Relationship="tucanchaappModel.fk_Reservas_Clientes1" FromRole="reservas" ToRole="clientes" />
+          <NavigationProperty Name="usuarios" Relationship="tucanchaappModel.fk_Reservas_Usuarios1" FromRole="reservas" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="tarifaprecios">
+          <Key>
+            <PropertyRef Name="IdTarifaPrecio" />
+          </Key>
+          <Property Name="IdTarifaPrecio" Type="Int32" Nullable="false" />
+          <Property Name="Tarifas_idTarifa" Type="Int32" Nullable="false" />
+          <Property Name="DiaSemanaInicio" Type="Int16" />
+          <Property Name="DiaSemanaFinal" Type="Int16" />
+          <Property Name="HoraInicio" Type="Int16" />
+          <Property Name="HoraFinal" Type="Int16" />
+          <Property Name="Valor" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tarifas" Relationship="tucanchaappModel.fk_TarifaPrecios_Tarifas1" FromRole="tarifaprecios" ToRole="tarifas" />
+        </EntityType>
+        <EntityType Name="tarifas">
+          <Key>
+            <PropertyRef Name="idTarifa" />
+          </Key>
+          <Property Name="idTarifa" Type="Int32" Nullable="false" />
+          <Property Name="Canchas_IdCancha" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" />
+          <Property Name="FechaFinal" Type="DateTime" />
+          <Property Name="ValorDefault" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="canchas" Relationship="tucanchaappModel.fk_Tarifas_Canchas1" FromRole="tarifas" ToRole="canchas" />
+          <NavigationProperty Name="tarifaprecios" Relationship="tucanchaappModel.fk_TarifaPrecios_Tarifas1" FromRole="tarifas" ToRole="tarifaprecios" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Correo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="reservas" Relationship="tucanchaappModel.fk_Reservas_Usuarios1" FromRole="usuarios" ToRole="reservas" />
+        </EntityType>
+        <EntityType Name="listadociudades">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="fk_Canchas_Establecimientos1">
+          <End Role="establecimientos" Type="tucanchaappModel.establecimientos" Multiplicity="1" />
+          <End Role="canchas" Type="tucanchaappModel.canchas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="establecimientos">
+              <PropertyRef Name="IdEstablecimiento" />
+            </Principal>
+            <Dependent Role="canchas">
+              <PropertyRef Name="Establecimientos_IdEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Canchas1">
+          <End Role="canchas" Type="tucanchaappModel.canchas" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canchas">
+              <PropertyRef Name="IdCancha" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Canchas_IdCancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tarifas_Canchas1">
+          <End Role="canchas" Type="tucanchaappModel.canchas" Multiplicity="1" />
+          <End Role="tarifas" Type="tucanchaappModel.tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canchas">
+              <PropertyRef Name="IdCancha" />
+            </Principal>
+            <Dependent Role="tarifas">
+              <PropertyRef Name="Canchas_IdCancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Ciudades_Dptos1">
+          <End Role="departamentos" Type="tucanchaappModel.departamentos" Multiplicity="1" />
+          <End Role="ciudades" Type="tucanchaappModel.ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="ciudades">
+              <PropertyRef Name="Departamento_idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Establecimientos_Ciudades">
+          <End Role="ciudades" Type="tucanchaappModel.ciudades" Multiplicity="1" />
+          <End Role="establecimientos" Type="tucanchaappModel.establecimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ciudades">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="establecimientos">
+              <PropertyRef Name="Ciudades_IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Clientes1">
+          <End Role="clientes" Type="tucanchaappModel.clientes" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clientes">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Clientes_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FotoEstablecimientos_Establecimientos1">
+          <End Role="establecimientos" Type="tucanchaappModel.establecimientos" Multiplicity="1" />
+          <End Role="fotoestablecimientos" Type="tucanchaappModel.fotoestablecimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="establecimientos">
+              <PropertyRef Name="IdEstablecimiento" />
+            </Principal>
+            <Dependent Role="fotoestablecimientos">
+              <PropertyRef Name="Establecimientos_IdEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Reservas_Usuarios1">
+          <End Role="usuarios" Type="tucanchaappModel.usuarios" Multiplicity="1" />
+          <End Role="reservas" Type="tucanchaappModel.reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="reservas">
+              <PropertyRef Name="Usuarios_idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TarifaPrecios_Tarifas1">
+          <End Role="tarifas" Type="tucanchaappModel.tarifas" Multiplicity="1" />
+          <End Role="tarifaprecios" Type="tucanchaappModel.tarifaprecios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifas">
+              <PropertyRef Name="idTarifa" />
+            </Principal>
+            <Dependent Role="tarifaprecios">
+              <PropertyRef Name="Tarifas_idTarifa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tucanchaappModelStoreContainer" CdmEntityContainer="tucanchaappEntities">
+          <EntitySetMapping Name="canchas">
+            <EntityTypeMapping TypeName="tucanchaappModel.canchas">
+              <MappingFragment StoreEntitySet="canchas">
+                <ScalarProperty Name="IdCancha" ColumnName="IdCancha" />
+                <ScalarProperty Name="Establecimientos_IdEstablecimiento" ColumnName="Establecimientos_IdEstablecimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+                <ScalarProperty Name="Techo" ColumnName="Techo" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ciudades">
+            <EntityTypeMapping TypeName="tucanchaappModel.ciudades">
+              <MappingFragment StoreEntitySet="ciudades">
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Departamento_idDepartamento" ColumnName="Departamento_idDepartamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="tucanchaappModel.clientes">
+              <MappingFragment StoreEntitySet="clientes">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departamentos">
+            <EntityTypeMapping TypeName="tucanchaappModel.departamentos">
+              <MappingFragment StoreEntitySet="departamentos">
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="establecimientos">
+            <EntityTypeMapping TypeName="tucanchaappModel.establecimientos">
+              <MappingFragment StoreEntitySet="establecimientos">
+                <ScalarProperty Name="IdEstablecimiento" ColumnName="IdEstablecimiento" />
+                <ScalarProperty Name="Ciudades_IdCiudad" ColumnName="Ciudades_IdCiudad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fotoestablecimientos">
+            <EntityTypeMapping TypeName="tucanchaappModel.fotoestablecimientos">
+              <MappingFragment StoreEntitySet="fotoestablecimientos">
+                <ScalarProperty Name="IdFotoEstablecimiento" ColumnName="IdFotoEstablecimiento" />
+                <ScalarProperty Name="Establecimientos_IdEstablecimiento" ColumnName="Establecimientos_IdEstablecimiento" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reservas">
+            <EntityTypeMapping TypeName="tucanchaappModel.reservas">
+              <MappingFragment StoreEntitySet="reservas">
+                <ScalarProperty Name="idReserva" ColumnName="idReserva" />
+                <ScalarProperty Name="Canchas_IdCancha" ColumnName="Canchas_IdCancha" />
+                <ScalarProperty Name="Clientes_IdCliente" ColumnName="Clientes_IdCliente" />
+                <ScalarProperty Name="Usuarios_idUsuario" ColumnName="Usuarios_idUsuario" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="HoraReservada" ColumnName="HoraReservada" />
+                <ScalarProperty Name="TipoReserva" ColumnName="TipoReserva" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarifaprecios">
+            <EntityTypeMapping TypeName="tucanchaappModel.tarifaprecios">
+              <MappingFragment StoreEntitySet="tarifaprecios">
+                <ScalarProperty Name="IdTarifaPrecio" ColumnName="IdTarifaPrecio" />
+                <ScalarProperty Name="Tarifas_idTarifa" ColumnName="Tarifas_idTarifa" />
+                <ScalarProperty Name="DiaSemanaInicio" ColumnName="DiaSemanaInicio" />
+                <ScalarProperty Name="DiaSemanaFinal" ColumnName="DiaSemanaFinal" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarifas">
+            <EntityTypeMapping TypeName="tucanchaappModel.tarifas">
+              <MappingFragment StoreEntitySet="tarifas">
+                <ScalarProperty Name="idTarifa" ColumnName="idTarifa" />
+                <ScalarProperty Name="Canchas_IdCancha" ColumnName="Canchas_IdCancha" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+                <ScalarProperty Name="ValorDefault" ColumnName="ValorDefault" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="tucanchaappModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="listadociudades">
+            <EntityTypeMapping TypeName="tucanchaappModel.listadociudades">
+              <MappingFragment StoreEntitySet="listadociudades">
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutbolitoAPI", "FutbolitoAPI\FutbolitoAPI.csproj", "{1F27493C-B60B-43D7-9A3D-7C0BF2F497DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutbolitoWEB", "FutbolitoWEB\FutbolitoWEB.csproj", "{70A29397-1A19-4531-AC16-EA47F1FE1EDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{DD9BDB4F-3F8D-4674-B428-2E4A0EE26D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DLL\DAL.csproj", "{7197C84E-EE21-4F10-81E8-5A5CC84B4E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{6304E05A-7329-4693-AEAE-FB5E15E679DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F27493C-B60B-43D7-9A3D-7C0BF2F497DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F27493C-B60B-43D7-9A3D-7C0BF2F497DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F27493C-B60B-43D7-9A3D-7C0BF2F497DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F27493C-B60B-43D7-9A3D-7C0BF2F497DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A29397-1A19-4531-AC16-EA47F1FE1EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A29397-1A19-4531-AC16-EA47F1FE1EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A29397-1A19-4531-AC16-EA47F1FE1EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A29397-1A19-4531-AC16-EA47F1FE1EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9BDB4F-3F8D-4674-B428-2E4A0EE26D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9BDB4F-3F8D-4674-B428-2E4A0EE26D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9BDB4F-3F8D-4674-B428-2E4A0EE26D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9BDB4F-3F8D-4674-B428-2E4A0EE26D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7197C84E-EE21-4F10-81E8-5A5CC84B4E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7197C84E-EE21-4F10-81E8-5A5CC84B4E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7197C84E-EE21-4F10-81E8-5A5CC84B4E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7197C84E-EE21-4F10-81E8-5A5CC84B4E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6304E05A-7329-4693-AEAE-FB5E15E679DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6304E05A-7329-4693-AEAE-FB5E15E679DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6304E05A-7329-4693-AEAE-FB5E15E679DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6304E05A-7329-4693-AEAE-FB5E15E679DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\obj\Debug\FutbolitoWEB.csprojResolveAssemblyReference.cache
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\FutbolitoWEB.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\FutbolitoWEB.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\BLL.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\DTO.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\DLL.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\EntityFramework.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\AutoMapper.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\BLL.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\DTO.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\DLL.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\EntityFramework.xml
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\AutoMapper.pdb
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\bin\AutoMapper.xml
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\obj\Debug\FutbolitoWEB.dll
+C:\SERGIO VELEZ\FutbolitoAPI\FutbolitoWEB\obj\Debug\FutbolitoWEB.pdb
